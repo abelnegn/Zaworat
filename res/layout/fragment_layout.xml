@@ -1,0 +1,44 @@
+<com.zaworat.activity.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe" >
+
+    <Button
+        android:id="@+id/btn_notify"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_notification"
+        android:text="@string/db_notification" />
+
+    <Button
+        android:id="@+id/btn_add_list"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_addlist"
+        android:text="@string/db_addlist" />
+    
+    <Button
+        android:id="@+id/btn_short_sms"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_sms"
+        android:text="@string/db_short_message" />
+	
+    <Button
+        android:id="@+id/btn_language"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_language"
+        android:text="@string/db_language" />
+
+    <Button
+        android:id="@+id/btn_download"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_download"
+        android:text="@string/db_download" />
+
+    <Button
+        android:id="@+id/btn_emergency_call"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_emergency_call"
+        android:text="@string/db_important_info" />
+
+</com.zaworat.activity.DashboardLayout>

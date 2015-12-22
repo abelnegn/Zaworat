@@ -1,4 +1,7 @@
 package com.zaworat.util;
+
+import com.zaworat.objects.db.ZaworatBalance;
+
 public class OfflineDataHelper {
     private OfflineDataSaveListener offlineDataSaveListener;
     private String tag = getClass().getSimpleName();
@@ -6,8 +9,8 @@ public class OfflineDataHelper {
     public void setOfflineDataSaveListener(OfflineDataSaveListener offlineDataSaveListener) {
         this.offlineDataSaveListener = offlineDataSaveListener;
     }
-    
-//    public void saveWCRPData(WeddingCardRingProtocol wcrp){
+   
+//    public void saveZaworatBalance(ZaworatBalance zBalance){
 //    	WeddingCardRingProtocol newWCRP = new WeddingCardRingProtocol();
 //    	newWCRP.setWcrpId(wcrp.getWcrpId());
 //    	newWCRP.setWeddingCRPName(wcrp.getWeddingCRPName());
@@ -27,7 +30,6 @@ public class OfflineDataHelper {
 //	    }
 //    	
 //    }
-    
     public interface OfflineDataSaveListener {
         public void dataSaved();
     }

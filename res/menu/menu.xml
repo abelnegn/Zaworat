@@ -1,0 +1,9 @@
+<!--
+  ~ This project is licensed under the open source MPL V2.
+  ~ See https://github.com/openMF/android-client/blob/master/LICENSE.md
+  -->
+
+<menu xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zaworat.activity.MainActivity">
+        
+</menu>
