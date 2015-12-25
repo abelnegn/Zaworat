@@ -1,12 +1,6 @@
 package com.zaworat.fragment;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
-
 import net.sqlcipher.database.SQLiteDatabase;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -16,11 +10,7 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.joanzapata.android.iconify.IconDrawable;
 import com.joanzapata.android.iconify.Iconify;
 import com.orm.Database;
-import com.orm.query.Condition;
-import com.orm.query.Select;
 import com.zaworat.activity.R;
-import com.zaworat.objects.db.ZaworatBalance;
-
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Build;
@@ -36,13 +26,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-public class AllBalanceFragment extends Fragment {
+public class PerformanceMonth extends Fragment {
 	private static final int MENU_ITEM_BACK = 2000;
 	private RelativeLayout graphBalance;
-	private BarChart mChart;
-	SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+	private BarChart mChart;	
+	private Database database;
 	
-	public AllBalanceFragment() {
+	public PerformanceMonth() {
 		
 	}
 
@@ -102,22 +92,48 @@ public class AllBalanceFragment extends Fragment {
 //	
 //	}
 
+	private String getMonth(String sDate){
+		String sMonth = "";
+		if(sDate.equals("01"))
+			sMonth = "Jan";
+		else if(sDate.equals("02"))
+			sMonth = "Feb";
+		else if(sDate.equals("03"))
+			sMonth = "Mar";
+		else if(sDate.equals("04"))
+			sMonth = "Apr";
+		else if(sDate.equals("05"))
+			sMonth = "May";
+		else if(sDate.equals("06"))
+			sMonth = "Jun";
+		else if(sDate.equals("07"))
+			sMonth = "Jul";
+		else if(sDate.equals("08"))
+			sMonth = "Aug";
+		else if(sDate.equals("09"))
+			sMonth = "Sep";
+		else if(sDate.equals("10"))
+			sMonth = "Oct";
+		else if(sDate.equals("11"))
+			sMonth = "Nov";
+		else if(sDate.equals("12"))
+			sMonth = "Dec";
+		
+		return sMonth;
+	}
+	
 	private void addData(){
 		ArrayList<BarEntry> entries = new ArrayList<BarEntry>();
 		ArrayList<String> labels = new ArrayList<String>();
-		try {
-			Cursor cursor = getGroupQuery("kality");
-			for(int cur = 0; cur < cursor.getCount(); cur++){
-				String sfds = cursor.getString(cursor.getColumnIndexOrThrow("BALANCE_DATE"));
-				float fAmount = cursor.getFloat(cursor.getColumnIndexOrThrow("AMOUNT"));
-				entries.add(new BarEntry(fAmount, cur));
-				//labels.add(cursor.getString(cursor.getColumnIndexOrThrow("week"))); 
-				
-				cursor.moveToNext();
-			}
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		Cursor cursor = getGroupQuery("kality");
+		cursor.moveToFirst();
+		for(int cur = 0; cur < cursor.getCount(); cur++){
+			String month = cursor.getString(cursor.getColumnIndexOrThrow("month"));
+			float fAmount = cursor.getFloat(cursor.getColumnIndexOrThrow("amount"));
+			entries.add(new BarEntry(fAmount, cur));
+			labels.add(getMonth(month)); 
+			
+			cursor.moveToNext();
 		}
 		
 		BarDataSet dataset = new BarDataSet(entries, "Kality Branch");
@@ -126,24 +142,14 @@ public class AllBalanceFragment extends Fragment {
 		mChart.setDescription("Zaworat balance");
 	}
 	
-	public Cursor getGroupQuery(String branch) throws ParseException{
-		Database database = new Database(getActivity());
+	public Cursor getGroupQuery(String branch){
+		database = new Database(getActivity());
 		SQLiteDatabase db = database.getDB();
-//		String selectQuery = "SELECT strftime('%W', balance_Date) week, sum(amount) amount " +
-//				"FROM Zaworat_Balance WHERE branch = ? GROUP BY week";
+		String selectQuery = "SELECT substr(balance_Date,5,2) month, sum(amount) amount " +
+				"FROM Zaworat_Balance WHERE branch = ? " +
+				"GROUP BY month";
+		Cursor cursor = db.rawQuery(selectQuery, new String[] {branch});
 		
-		List<ZaworatBalance> zbList = Select.from(ZaworatBalance.class).where(Condition.prop("balance_Date").
-				eq("2015-12-21")).and(Condition.prop("branch").
-						eq("kality")).list();
-		
-//		Iterator<ZaworatBalance> zbList = ZaworatBalance.find(ZaworatBalance.class, null, null, "balance_date", null, null).iterator();
-		
-		List<ZaworatBalance> zbbList = Select.from(ZaworatBalance.class).list();
-		String selectQuery = "SELECT * FROM Zaworat_Balance";
-//		
-		Cursor cursor = db.rawQuery(selectQuery, null);
-//		Cursor cursor = db.rawQuery(selectQuery, new String[] {branch});
-
 		return cursor;
 	}
 	

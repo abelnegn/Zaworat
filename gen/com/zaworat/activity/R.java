@@ -8,6 +8,9 @@
 package com.zaworat.activity;
 
 public final class R {
+    public static final class array {
+        public static final int branch_list=0x7f070000;
+    }
     public static final class attr {
     }
     public static final class color {
@@ -35,68 +38,91 @@ public final class R {
     }
     public static final class drawable {
         public static final int actionbar_background=0x7f020000;
-        public static final int btn_addlist=0x7f020001;
-        public static final int btn_download=0x7f020002;
-        public static final int btn_emergency_call=0x7f020003;
-        public static final int btn_language=0x7f020004;
-        public static final int btn_notification=0x7f020005;
-        public static final int btn_sms=0x7f020006;
-        public static final int counter_bg=0x7f020007;
-        public static final int emergency_call_default=0x7f020008;
-        public static final int emergency_call_pressed=0x7f020009;
-        public static final int emergency_call_selected=0x7f02000a;
-        public static final int ic_communities=0x7f02000b;
-        public static final int ic_drawer=0x7f02000c;
-        public static final int ic_home=0x7f02000d;
-        public static final int ic_launcher=0x7f02000e;
-        public static final int ic_pages=0x7f02000f;
-        public static final int ic_people=0x7f020010;
-        public static final int ic_photos=0x7f020011;
-        public static final int ic_whats_hot=0x7f020012;
-        public static final int language_default=0x7f020013;
-        public static final int language_pressed=0x7f020014;
-        public static final int language_selected=0x7f020015;
-        public static final int list_item_bg_normal=0x7f020016;
-        public static final int list_item_bg_pressed=0x7f020017;
-        public static final int list_selector=0x7f020018;
-        public static final int messages_default=0x7f020019;
-        public static final int messages_pressed=0x7f02001a;
-        public static final int messages_selected=0x7f02001b;
-        public static final int news_feed_default=0x7f02001c;
-        public static final int news_feed_pressed=0x7f02001d;
-        public static final int news_feed_selected=0x7f02001e;
-        public static final int sms_default=0x7f02001f;
-        public static final int sms_pressed=0x7f020020;
-        public static final int sms_selected=0x7f020021;
-        public static final int syncronize_default=0x7f020022;
-        public static final int syncronize_pressed=0x7f020023;
-        public static final int syncronize_selected=0x7f020024;
-        public static final int zaworat_icon=0x7f020025;
+        public static final int balance_default=0x7f020001;
+        public static final int balance_pressed=0x7f020002;
+        public static final int balance_selected=0x7f020003;
+        public static final int btn_addlist=0x7f020004;
+        public static final int btn_download=0x7f020005;
+        public static final int btn_emergency_call=0x7f020006;
+        public static final int btn_language=0x7f020007;
+        public static final int btn_notification=0x7f020008;
+        public static final int btn_sms=0x7f020009;
+        public static final int chart_icon_default=0x7f02000a;
+        public static final int chart_icon_pressed=0x7f02000b;
+        public static final int chart_icon_selected=0x7f02000c;
+        public static final int counter_bg=0x7f02000d;
+        public static final int customer_default=0x7f02000e;
+        public static final int customer_pressed=0x7f02000f;
+        public static final int customer_selected=0x7f020010;
+        public static final int emergency_call_default=0x7f020011;
+        public static final int emergency_call_pressed=0x7f020012;
+        public static final int emergency_call_selected=0x7f020013;
+        public static final int ic_communities=0x7f020014;
+        public static final int ic_drawer=0x7f020015;
+        public static final int ic_home=0x7f020016;
+        public static final int ic_launcher=0x7f020017;
+        public static final int ic_pages=0x7f020018;
+        public static final int ic_people=0x7f020019;
+        public static final int ic_photos=0x7f02001a;
+        public static final int ic_whats_hot=0x7f02001b;
+        public static final int language_default=0x7f02001c;
+        public static final int language_pressed=0x7f02001d;
+        public static final int language_selected=0x7f02001e;
+        public static final int list_item_bg_normal=0x7f02001f;
+        public static final int list_item_bg_pressed=0x7f020020;
+        public static final int list_selector=0x7f020021;
+        public static final int messages_default=0x7f020022;
+        public static final int messages_pressed=0x7f020023;
+        public static final int messages_selected=0x7f020024;
+        public static final int news_feed_default=0x7f020025;
+        public static final int news_feed_pressed=0x7f020026;
+        public static final int news_feed_selected=0x7f020027;
+        public static final int performance_default=0x7f020028;
+        public static final int performance_pressed=0x7f020029;
+        public static final int performance_selected=0x7f02002a;
+        public static final int sms_default=0x7f02002b;
+        public static final int sms_pressed=0x7f02002c;
+        public static final int sms_selected=0x7f02002d;
+        public static final int stock_default=0x7f02002e;
+        public static final int stock_pressed=0x7f02002f;
+        public static final int stock_selected=0x7f020030;
+        public static final int syncronize_default=0x7f020031;
+        public static final int syncronize_pressed=0x7f020032;
+        public static final int syncronize_selected=0x7f020033;
+        public static final int zaworat_icon=0x7f020034;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000a;
-        public static final int btn_add_list=0x7f090005;
-        public static final int btn_download=0x7f090008;
-        public static final int btn_emergency_call=0x7f090009;
-        public static final int btn_language=0x7f090007;
-        public static final int btn_notify=0x7f090004;
-        public static final int btn_short_sms=0x7f090006;
-        public static final int frame_container=0x7f090001;
-        public static final int graphBalance=0x7f090002;
-        public static final int home_root=0x7f090003;
-        public static final int short_number_txt=0x7f090000;
+        public static final int action_settings=0x7f0a0010;
+        public static final int btn_add_list=0x7f0a000b;
+        public static final int btn_download=0x7f0a000e;
+        public static final int btn_emergency_call=0x7f0a000f;
+        public static final int btn_language=0x7f0a000d;
+        public static final int btn_notify=0x7f0a000a;
+        public static final int btn_select_from=0x7f0a0004;
+        public static final int btn_select_to=0x7f0a0006;
+        public static final int btn_short_sms=0x7f0a000c;
+        public static final int frame_container=0x7f0a0001;
+        public static final int from_date=0x7f0a0003;
+        public static final int generate_report=0x7f0a0007;
+        public static final int graphBalance=0x7f0a0002;
+        public static final int home_root=0x7f0a0009;
+        public static final int message_webview=0x7f0a0008;
+        public static final int short_number_txt=0x7f0a0000;
+        public static final int to_date=0x7f0a0005;
     }
     public static final class layout {
         public static final int actionbar_layout=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int balance_by_graph=0x7f030002;
-        public static final int footer_layout=0x7f030003;
-        public static final int fragment_home=0x7f030004;
-        public static final int fragment_layout=0x7f030005;
+        public static final int customer_balance=0x7f030003;
+        public static final int footer_layout=0x7f030004;
+        public static final int fragment_home=0x7f030005;
+        public static final int fragment_layout=0x7f030006;
+        public static final int zaworat_balance=0x7f030007;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int menu=0x7f080001;
+        public static final int main=0x7f090000;
+        public static final int menu=0x7f090001;
     }
     public static final class string {
         public static final int action_settings=0x7f060002;
@@ -110,10 +136,15 @@ public final class R {
          */
         public static final int db_notification=0x7f060003;
         public static final int db_short_message=0x7f060005;
+        public static final int display_report=0x7f06000d;
+        public static final int from_date=0x7f06000a;
+        public static final int to_date=0x7f06000b;
+        public static final int txt_branch=0x7f06000e;
         public static final int txt_header_info=0x7f060001;
+        public static final int txt_select=0x7f06000c;
     }
     public static final class style {
-        public static final int ActionBarCompat=0x7f070006;
+        public static final int ActionBarCompat=0x7f080006;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -135,17 +166,17 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int Button=0x7f070003;
-        public static final int CustomTheme=0x7f070004;
-        public static final int DashboardButton=0x7f070007;
-        public static final int FooterBar=0x7f070008;
-        public static final int Spinner=0x7f070002;
-        public static final int WindowTitleBackground=0x7f070005;
-        public static final int customTheme=0x7f070009;
+        public static final int AppTheme=0x7f080001;
+        public static final int Button=0x7f080003;
+        public static final int CustomTheme=0x7f080004;
+        public static final int DashboardButton=0x7f080007;
+        public static final int FooterBar=0x7f080008;
+        public static final int Spinner=0x7f080002;
+        public static final int WindowTitleBackground=0x7f080005;
+        public static final int customTheme=0x7f080009;
     }
 }

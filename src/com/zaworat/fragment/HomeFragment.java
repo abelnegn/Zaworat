@@ -33,66 +33,70 @@ public class HomeFragment extends Fragment{
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         
         
-        Button btn_notify = (Button) rootView.findViewById(R.id.btn_notify);
+        Button btn_zBalance = (Button) rootView.findViewById(R.id.btn_notify);
         
-        Button btn_add_list = (Button) rootView.findViewById(R.id.btn_add_list);
+        Button btn_cBalance = (Button) rootView.findViewById(R.id.btn_add_list);
         
-        Button btn_short_sms = (Button) rootView.findViewById(R.id.btn_short_sms);
+        Button btn_perf_month = (Button) rootView.findViewById(R.id.btn_short_sms);
         
-        Button btn_language = (Button) rootView.findViewById(R.id.btn_language);
+        Button btn_stock_balance = (Button) rootView.findViewById(R.id.btn_language);
         
-        Button btn_download = (Button) rootView.findViewById(R.id.btn_download);
+        Button btn_perf_branch = (Button) rootView.findViewById(R.id.btn_download);
         
         Button btn_emergency_call = (Button) rootView.findViewById(R.id.btn_emergency_call);
         
         //Short Notification button click
-        btn_notify.setOnClickListener(new View.OnClickListener() {
+        btn_zBalance.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
 				FragmentManager fragmentManager = getFragmentManager();
-				GraphBalanceFragment gbFragment = new GraphBalanceFragment();
+				ZaworatBalance gbFragment = new ZaworatBalance();
 				fragmentManager.beginTransaction().replace(R.id.frame_container, gbFragment).commit();
 			}
 		});
 
-        //Add List button click
-        btn_add_list.setOnClickListener(new View.OnClickListener() {
+        //Add customer balance button click
+        btn_cBalance.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
 				FragmentManager fragmentManager = getFragmentManager();
-				LineChartBalance lcFragment = new LineChartBalance();
+				CustomerBalance lcFragment = new CustomerBalance();
 				fragmentManager.beginTransaction().replace(R.id.frame_container, lcFragment).commit();				
 			}
 		});
         
-        //Short sms button click
-        btn_short_sms.setOnClickListener(new View.OnClickListener() {
+        //performance by month button click
+        btn_perf_month.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
 				FragmentManager fragmentManager = getFragmentManager();
-				AllBalanceFragment allFragment = new AllBalanceFragment();
+				PerformanceMonth allFragment = new PerformanceMonth();
 				fragmentManager.beginTransaction().replace(R.id.frame_container, allFragment).commit();	
 			}
 		});
 
-        //Listening Language button click
-        btn_language.setOnClickListener(new View.OnClickListener() {
+        //Stock balance button click
+        btn_stock_balance.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
-
+				FragmentManager fragmentManager = getFragmentManager();
+				StockBalance allFragment = new StockBalance();
+				fragmentManager.beginTransaction().replace(R.id.frame_container, allFragment).commit();	
 			}
 		});
 
-        //Listening Download button click
-        btn_download.setOnClickListener(new View.OnClickListener() {
+        //performance by branch button click
+        btn_perf_branch.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
 			public void onClick(View view) {
-
+				FragmentManager fragmentManager = getFragmentManager();
+				PerformanceByBranch gbFragment = new PerformanceByBranch();
+				fragmentManager.beginTransaction().replace(R.id.frame_container, gbFragment).commit();
 			}
 		});
         

@@ -6,12 +6,23 @@
 	<string name="action_settings">Settings</string>
   
 	<!--     Dashboard -->
-	<string name="db_notification">Notify Me</string>
-	<string name="db_addlist">Add List</string>
-	<string name="db_short_message">Short Message</string>
-	<string name="db_language">Language</string>
-	<string name="db_download">Update</string>
+	<string name="db_notification">Zaworat Balance</string>
+	<string name="db_addlist">Customer Balance</string>
+	<string name="db_short_message">Performance by Month</string>
+	<string name="db_language">Stock Balance</string>
+	<string name="db_download">Performance by Branch</string>
 	<string name="db_about">About</string>
 	<string name="db_important_info">Important Info</string>
+	<string name="from_date">From Date:</string>
+	<string name="to_date">To Date:</string>
+	<string name="txt_select">Select</string>
+	<string name="display_report">Generate</string>
+	<string name="txt_branch">Branch</string>
 	
+	<string-array name="branch_list">
+        <item>Select Branch</item>
+        <item>Akaki</item>
+        <item>Kality</item>
+        <item>H.Office</item>
+    </string-array>
 </resources>

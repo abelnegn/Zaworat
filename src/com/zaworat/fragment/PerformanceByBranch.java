@@ -2,20 +2,6 @@ package com.zaworat.fragment;
 
 import java.util.ArrayList;
 
-import com.github.mikephil.charting.charts.PieChart;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.Legend.LegendPosition;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.mikephil.charting.utils.Highlight;
-import com.github.mikephil.charting.utils.PercentFormatter;
-import com.joanzapata.android.iconify.IconDrawable;
-import com.joanzapata.android.iconify.Iconify;
-import com.zaworat.activity.R;
-
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,16 +17,30 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-public class AllBranchBalanceFragment extends Fragment{
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.Legend.LegendPosition;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.Highlight;
+import com.github.mikephil.charting.utils.PercentFormatter;
+import com.joanzapata.android.iconify.IconDrawable;
+import com.joanzapata.android.iconify.Iconify;
+import com.zaworat.activity.R;
+
+public class PerformanceByBranch extends Fragment{
 	private RelativeLayout graphBalance;
 	private PieChart mChart;
 	private static final int MENU_ITEM_BACK = 2000;
 
 	// we are going to display pie chart
-	private float[] yData = { 5, 10, 15, 30, 40 };
-	private String[] xData = { "Kality", "Kara", "Merkato", "Head Office", "Samsung" };
+	private float[] yData = { 150, 100, 400, 300};
+	private String[] xData = { "Akaki", "Kality", "H.Office", "Merkato"};
 
-	public AllBranchBalanceFragment(){}
+	public PerformanceByBranch(){}
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class AllBranchBalanceFragment extends Fragment{
 
 		// Configure pie chart
 		mChart.setUsePercentValues(true);
-		mChart.setDescription("Smart phone market share");
+		mChart.setDescription("Zaworat Status Report");
 
 		// Enable hole and configure
 		mChart.setDrawHoleEnabled(true);
@@ -116,7 +116,7 @@ public class AllBranchBalanceFragment extends Fragment{
 			xVals1.add(xData[i]);
 		
 		//create pie data set
-		PieDataSet dataSet = new PieDataSet(yVals1, "Market shares");
+		PieDataSet dataSet = new PieDataSet(yVals1, "Status Report");
 		dataSet.setSliceSpace(3);
 		dataSet.setSelectionShift(5);
 		

@@ -15,11 +15,12 @@ import com.github.mikephil.charting.utils.PercentFormatter;
 import com.joanzapata.android.iconify.IconDrawable;
 import com.joanzapata.android.iconify.Iconify;
 import com.zaworat.activity.R;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,16 +31,16 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-public class GraphBalanceFragment extends Fragment{
+public class StockBalance extends Fragment{
 	private RelativeLayout graphBalance;
 	private PieChart mChart;
 	private static final int MENU_ITEM_BACK = 2000;
 
 	// we are going to display pie chart
-	private float[] yData = { 5, 10, 15, 30, 40 };
-	private String[] xData = { "Sony", "Hiwawie", "LG", "Apple", "Samsung" };
+	private float[] yData = { 50, 150, 135, 30};
+	private String[] xData = { "Kality", "Kara", "Merkato", "Head Office"};
 
-	public GraphBalanceFragment(){}
+	public StockBalance(){}
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +63,7 @@ public class GraphBalanceFragment extends Fragment{
 
 		// Configure pie chart
 		mChart.setUsePercentValues(true);
-		mChart.setDescription("Smart phone market share");
+		mChart.setDescription("Stock Balance");
 
 		// Enable hole and configure
 		mChart.setDrawHoleEnabled(true);
@@ -82,7 +83,7 @@ public class GraphBalanceFragment extends Fragment{
 				if (e == null)
 					return;
 				Toast.makeText(getActivity(),
-						xData[e.getXIndex()] + " = " + e.getVal() + "%",
+						xData[e.getXIndex()] + " = " + e.getVal(),
 						Toast.LENGTH_SHORT).show();
 			}
 
@@ -115,7 +116,7 @@ public class GraphBalanceFragment extends Fragment{
 			xVals1.add(xData[i]);
 		
 		//create pie data set
-		PieDataSet dataSet = new PieDataSet(yVals1, "Market shares");
+		PieDataSet dataSet = new PieDataSet(yVals1, "All Branch");
 		dataSet.setSliceSpace(3);
 		dataSet.setSelectionShift(5);
 		
